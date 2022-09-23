@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class FileParserTest {
     ClassLoader classLoader = FileParserTest.class.getClassLoader();
     static String zipFileName = "C:\\Users\\rualdinuly\\IdeaProjects\\fileTest\\demo\\src\\test\\resources\\files.zip";
-    String pdfFileName = "sample.pdf";
+    String pdfFilePath = "C:\\Users\\rualdinuly\\IdeaProjects\\fileTest\\demo\\src\\test\\resourcessample.pdf";
     String csvFileName = "file_example_CSV_5000.csv";
     String xlsFileName = "file_example_XLS_50.xls";
     static String OUTPUT_DIR = "C:\\Users\\rualdinuly\\IdeaProjects\\fileTest\\demo\\src\\test\\resources";
@@ -56,7 +56,7 @@ public class FileParserTest {
     @Order(1)
     public void canAssertThatPdfContainsText() throws IOException {
         readUsingZipInputStream();
-        PDF pdf = new PDF(new File("C:\\Users\\rualdinuly\\IdeaProjects\\fileTest\\demo\\src\\test\\resourcessample.pdf"));
+        PDF pdf = new PDF(new File(pdfFilePath));
         assertThat(pdf).containsExactText("A Simple PDF File");
     }
 

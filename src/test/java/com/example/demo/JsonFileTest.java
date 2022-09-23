@@ -13,9 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class JsonFileTest {
     @Test
     public void canAssertThatJsonHasCorrectData() throws IOException {
+        String JsonFilePath = "C:\\Users\\rualdinuly\\IdeaProjects\\fileTest\\demo\\src\\test\\resources\\game.json";
         ObjectMapper mapper = new ObjectMapper();
-        Heralt heralt = mapper.readValue(Paths.get("C:\\Users\\rualdinuly\\IdeaProjects\\fileTest\\demo\\src\\test\\resources\\game.json")
-                .toFile(), Heralt.class);
+        Heralt heralt = mapper.readValue(Paths.get(JsonFilePath).toFile(), Heralt.class);
 
         assertThat(heralt.getName().equals("Witcher"));
         assertEquals(heralt.isAvailable(), true);
